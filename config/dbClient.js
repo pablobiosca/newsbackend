@@ -12,7 +12,7 @@ class mongoNewsClient {
         try {
             const query_string_connection = process.env.MONGO_URI
             await mongoose.connect(query_string_connection)
-            console.log("connected to mongol")
+            console.log("connected to mongo")
         } catch (e) {
             console.log(e.error)
         }
