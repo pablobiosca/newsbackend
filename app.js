@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser"
 import newsRouter from "./routes/news.js"
 import logger from "morgan"
 import mongoNewsClient from "./config/dbClient.js"
-import dbClient from "./config/dbClient.js"
+// import dbClient from "./config/dbClient.js"
 import cors from "cors"
 
 const app = express()
@@ -25,7 +25,7 @@ const server = app.listen(port, () => {
 
 process.on("SIGINT", async () => {
     console.log("Server shutting down...")
-    await dbClient.closeConnection()
+    await mongoNewsClient.closeConnection()
     server.close(() => {
         console.log("Server closed")
         process.exit(0)
